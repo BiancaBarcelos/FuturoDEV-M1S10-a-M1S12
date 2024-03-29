@@ -1,10 +1,12 @@
-function Index() {
+function CardTrilha({dadosTrilha}) {
     return (
       <>
-        <span>nome</span>
         <img src="" alt="" />
+        <h1>{dadosTrilha.nomeTrilha}</h1>
+        <span>{dadosTrilha.cidade}</span>
+        <img src={dadosTrilha.urlImagem} alt="" />
       </>
     )
   }
   
-  export default Index;
+  export default CardTrilha;

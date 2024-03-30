@@ -1,0 +1,4 @@
+.cardContainer {
+    display: flex;
+    box-shadow:  .2em .2em .8em black;
+}

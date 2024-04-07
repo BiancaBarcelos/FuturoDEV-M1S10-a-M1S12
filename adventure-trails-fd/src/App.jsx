@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import CardTrilha from './components/CardTrilha'
+import Menu from './components/Menu'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const listaTrilhas = [
+    {
+      nomeTrilha: "Costa da Lagoa",
+      cidade:"Florianópolis",
+      estado:"SC",
+      duracao: 120,
+      trajeto: 4,
+      dificuldade:"Iniciante",
+      tipo:"caminhada / trekking",
+      nomeUsuario:"Bianca Barcelos",
+      urlImagem:"https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      nomeTrilha: "Costa da Lagoa",
+      cidade:"Florianópolis",
+      estado:"SC",
+      duracao: 120,
+      trajeto: 4,
+      dificuldade:"Iniciante",
+      tipo:"caminhada / trekking",
+      nomeUsuario:"Bianca Barcelos",
+      urlImagem:"https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='bg'>
+      <Menu/>
+      <img src="https://images.pexels.com/photos/2132087/pexels-photo-2132087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+      <h1>Explore Trilhas Incríveis</h1>
+      {
+        listaTrilhas.map((trilha, index) => (
+          <CardTrilha dadosTrilha={trilha} key={index}/>
+        ))
+      }
+      <Footer/>
+    </div>
   )
 }
 
-export default App
+export default App;

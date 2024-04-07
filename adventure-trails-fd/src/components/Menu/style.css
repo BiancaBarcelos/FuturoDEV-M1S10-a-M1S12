@@ -1,0 +1,17 @@
+.menu {
+    background-color: #504908;
+    color: #faf5ed;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center; 
+    & ul {
+        display: flex;
+        gap: 15px;
+
+        & li {
+            list-style-type: none;
+        }
+    }
+}

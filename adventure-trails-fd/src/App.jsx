@@ -31,7 +31,7 @@ function App() {
   ]
 
   return (
-    <>
+    <div className='bg'>
       <Menu/>
       <img src="https://images.pexels.com/photos/2132087/pexels-photo-2132087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
       <h1>Explore Trilhas Incríveis</h1>
@@ -41,7 +41,7 @@ function App() {
         ))
       }
       <Footer/>
-    </>
+    </div>
   )
 }
 

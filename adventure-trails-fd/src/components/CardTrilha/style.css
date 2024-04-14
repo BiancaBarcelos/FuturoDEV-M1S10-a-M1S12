@@ -1,4 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+*{
+    font-family: "Inter", sans-serif;
+}
 .cardContainer {
+    margin: auto;
     display: flex;
-    box-shadow:  .2em .2em .8em black;
+    box-shadow:  .2em .2em .9em #BDB9B3;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 80px;
+    color: #0D1A26;
+
+    & .imagemCard {
+        width: 400px;
+        height: 351px;
+        overflow: hidden;
+        position: relative;
+        & img {
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+        }
+    }
+    & .textoCard {
+        padding: 20px 40px 20px 20px;
+        width: 100%;
+        & .linha {
+            width: 40px;
+            height: 2px;
+            background-color: #BDB9B3;
+            margin: 24px 0;
+        }
+        & .tituloCard {
+            display: flex;
+            justify-content: space-between;
+            & h1 {
+                font-family: "Comfortaa", sans-serif;
+                max-width: 800px;
+            }
+        }
+        & .usuário {
+            font-weight: 900;
+            text-align: right;
+        }
+        & .detalhes p:not(:last-child) {
+            padding-bottom: 8px;
+        }
+        & .dificuldade {
+            margin: 24px 0;
+            padding: 6px 12px;
+            background-color: #EFF0F0;
+            border-radius: 25px;
+            display: block;
+            width: fit-content;
+        }
+        & .avaliacaoTrilha {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            & a {
+                color: #0D1A26;
+            }
+        }
+    }
 }

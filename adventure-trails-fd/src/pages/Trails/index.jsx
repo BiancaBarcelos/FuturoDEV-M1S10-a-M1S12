@@ -1,16 +1,27 @@
 import CardTrilha from '../../components/CardTrilha'
-import useFetch from "../../hooks/useFetch"
+import { useContext, useEffect } from 'react'
+import {TrilhasContext} from "../../context/TrilhasContext"
+import "./style.css"
+
 
 function Trails() {
-    const [listaTrilhas] = useFetch('/trilhas/trilhas.json');
+    const {trilhas} = useContext(TrilhasContext);
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
+    
     return(
-        <>
-        <img src="https://images.pexels.com/photos/2132087/pexels-photo-2132087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-        <h1>Explore Trilhas Incríveis</h1>
+      <>
+        <div className='imagemTrails'>
+          <img src="../public/bgTrails.png" alt="" />
+        </div>
+        <h1 className='tituloTrails'>Explore Trilhas Incríveis</h1>
         {
-            listaTrilhas && listaTrilhas.map((trilha, index) => (
+            trilhas && trilhas.map((trilha, index) => (
             <CardTrilha dadosTrilha={trilha} key={index}/>
             ))
+            
         }
       </>
     )

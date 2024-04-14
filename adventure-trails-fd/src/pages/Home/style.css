@@ -1,0 +1,63 @@
+h2 {
+    font-size: 50px;
+    font-weight: 300;
+}
+p {
+    font-size: 20px;
+}
+
+.sessao1Home {
+    margin-bottom: 50px;
+    & .hero {
+        width: 100%;
+        height: 945px;
+        overflow: hidden;
+        position: relative;
+        & img {
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+        }
+        & .texto1 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            color: #fff;
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            & h1 {
+                font-size: 60px;
+                width: 50%;
+                margin-bottom: 54px;
+            }
+            & p {
+                width: 50%;
+            }
+            
+        }
+    }
+}
+.texto2 {
+    display: flex;
+    flex-direction: column;
+    & h2 {
+        margin-bottom: 54px;
+    }
+    & .btn1 {
+        align-self: center;
+    }
+}
+.texto3 {
+    display: flex;
+    margin-top: 55px;
+    margin-bottom: 55px;
+
+    & h2 {
+        width: 80%;
+    }
+}
+

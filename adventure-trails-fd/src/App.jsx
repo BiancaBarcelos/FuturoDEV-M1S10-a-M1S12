@@ -1,26 +1,19 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import Trails from "./pages/Trails"
+import {Outlet} from "react-router-dom"
 import './App.css'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
-import { element } from "prop-types";
+import {TrilhasContextProvider} from "./context/TrilhasContext"
 
 function App() {
   
   return (
-    <div className='bg'>
-      
-      <Menu/> 
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="cadastro" element={<SignUp />}></Route>
-        <Route path="trilhas" element={<Trails />}></Route>
-      </Routes>
-      
-      <Footer/>
-    </div>
+    <TrilhasContextProvider>
+      <div> 
+        <Menu/> 
+        <Outlet/>
+        <Footer/>
+      </div>
+    </TrilhasContextProvider>
   )
 }
 

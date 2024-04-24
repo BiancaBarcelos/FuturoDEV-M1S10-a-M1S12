@@ -13,6 +13,10 @@ p {
         height: 945px;
         overflow: hidden;
         position: relative;
+        background-image: url('../public/bgTrails.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         & img {
             width: 100%;
             top: 50%;
@@ -23,7 +27,7 @@ p {
             display: flex;
             flex-direction: column;
             width: 100%;
-            color: #fff;
+            color: #FFFFFF;
             align-items: center;
             text-align: center;
             position: absolute;

@@ -7,11 +7,11 @@
 .cardContainer {
     margin: auto;
     display: flex;
-    box-shadow:  .2em .2em .9em #BDB9B3;
+    box-shadow:  .2em .2em .9em #13241A;
     max-width: 1200px;
     width: 100%;
     margin-bottom: 80px;
-    color: #0D1A26;
+    color: #13241A;
 
     & .imagemCard {
         width: 400px;
@@ -31,7 +31,7 @@
         & .linha {
             width: 40px;
             height: 2px;
-            background-color: #BDB9B3;
+            background-color: #13241A;
             margin: 24px 0;
         }
         & .tituloCard {
@@ -42,7 +42,7 @@
                 max-width: 800px;
             }
         }
-        & .usuário {
+        & .usuario {
             font-weight: 900;
             text-align: right;
         }
@@ -62,7 +62,7 @@
             align-items: center;
             gap: 15px;
             & a {
-                color: #0D1A26;
+                color: #13241A;
             }
         }
     }

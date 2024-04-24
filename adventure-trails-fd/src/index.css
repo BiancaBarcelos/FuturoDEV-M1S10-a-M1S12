@@ -12,22 +12,36 @@
     width: 100%;
     margin: auto;
 }
-
-.btn1 {
+.btn {
     text-decoration: none;
-    color: #fff;
     font-weight: 600;
-    background-color: #504908;
     border-radius: 5px;
     padding: 10px 15px;
     display: block;
     width: fit-content;
     margin: 50px 0;
     transition: background-color .3s ease-in-out;
+    border: 0;
+    cursor: pointer;
+}
+.btn1 {
+    color: #FFFFFF;
+    background-color: #194A2D;
     &:hover{
-        background-color: #6e6515;
+        background-color: #3e7a55;
     }
     &:active{
-        background-color: #403a08;
+        background-color: #13241A;
+    }
+}
+.btn2 {
+    color: #0a5008;
+    border: 2px solid #0a5008;
+    background-color: transparent;
+    &:hover{
+        background-color: #b6daaf;
+    }
+    &:active{
+        background-color: #041005;
     }
 }

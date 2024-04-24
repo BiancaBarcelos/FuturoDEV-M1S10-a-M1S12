@@ -1,6 +1,6 @@
 .footer {
-    background-color: #504908;
-    color: #faf5ed;
+    background-color: #13241A;
+    color: #FFFFFF;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -22,7 +22,7 @@
     }
     & a{
         text-decoration: none;
-        color: #faf5ed;
+        color: #FFFFFF;
     }
     & img {
         filter: invert(1);

@@ -34,7 +34,7 @@ function CardTrilha({dadosTrilha}) {
           />
         </div>
         <div className="linha"></div>
-        <p className="usuário">Por: {dadosTrilha.nomeUsuario}</p>
+        <p className="usuario">Por: {dadosTrilha.nomeUsuario}</p>
         <div className="detalhes">
           <p>Duração: {dadosTrilha.duracao} min</p>
           <p>Trajeto: {dadosTrilha.trajeto} Km</p>
@@ -52,14 +52,14 @@ function CardTrilha({dadosTrilha}) {
 CardTrilha.propTypes = {
     dadosTrilha: PropTypes.exact({
     nomeTrilha: PropTypes.string.isRequired,
-    cidade: PropTypes.string,
-    estado: PropTypes.string,
-    duracao: PropTypes.number,
-    trajeto: PropTypes.number,
-    dificuldade: PropTypes.string,
-    tipo: PropTypes.oneOf(['caminhada / trekking' ,'ciclismo']),
-    nomeUsuario: PropTypes.string,
-    urlImagem: PropTypes.string,
+    cidade: PropTypes.string.isRequired,
+    estado: PropTypes.string.isRequired,
+    duracao: PropTypes.number.isRequired,
+    trajeto: PropTypes.number.isRequired,
+    dificuldade: PropTypes.string.isRequired,
+    tipo: PropTypes.oneOf(['Caminhada / Trekking' ,'Ciclismo']).isRequired,
+    nomeUsuario: PropTypes.string.isRequired,
+    urlImagem: PropTypes.string.isRequired,
   })
 }
 

@@ -31,7 +31,7 @@ function Home() {
         <h2>Compartilhe fotos, dicas e localização das suas trilhas favoritas</h2>
         <Link className="btn btn1" to="/cadastro">Cadastrar nova Trilha</Link>  
       </div>
-      <img src="../public/trilhaHome.png" alt="" />
+      <img src="../src/assets/trilhaHome.png" alt="" />
     </div>
    </div>
  )

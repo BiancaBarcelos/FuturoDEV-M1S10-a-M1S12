@@ -13,7 +13,7 @@ p {
         height: 945px;
         overflow: hidden;
         position: relative;
-        background-image: url('../public/bgTrails.png');
+        background-image: url('../../assets/bgTrails.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

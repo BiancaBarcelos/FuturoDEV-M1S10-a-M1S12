@@ -14,7 +14,7 @@ function Trails() {
     return(
       <>
         <div className='imagemTrails'>
-          <img src="../public/bgTrails.png" alt="" />
+          <img src="../src/assets/bgTrails.png" alt="" />
         </div>
         <h1 className='tituloTrails'>Explore Trilhas Incríveis</h1>
         {

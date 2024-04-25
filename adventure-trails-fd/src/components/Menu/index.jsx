@@ -13,7 +13,6 @@ function Menu(){
                     <ul>
                         <li><Link to="/trilhas">Explorar Trilhas </Link></li>
                         <li><Link to="/cadastro">Cadastrar Trilhas</Link></li>
-                        <li><Link to="/cadastro">Login</Link></li> {/*mudar o link*/}
                     </ul>
                 </nav>
             </div>

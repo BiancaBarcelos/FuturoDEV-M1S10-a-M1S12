@@ -27,6 +27,8 @@
 .btn1 {
     color: #FFFFFF;
     background-color: #194A2D;
+    border: 2px solid #194A2D;
+
     &:hover{
         background-color: #3e7a55;
     }

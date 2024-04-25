@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {TextField} from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -6,15 +6,20 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {useForm} from "react-hook-form"
 import './style.css'
+import { TrilhasContext } from "../../context/TrilhasContext";
+import { useNavigate } from "react-router-dom";
+
 
 // Poderia ser chamado essa página de RegisterProduct
 
 function SignUp() {
 
+    const navigate = useNavigate();
+    const { addTrilha, estadosBrasil, dificuldadeTrilha, categoriaTrilha } = useContext(TrilhasContext);
     const [estado, setEstado] = useState('');
-    const [dificuldade, setDificuldade] = useState('Iniciante');
-    const [tipoTrilha, setTipoTrilha] = useState('Caminhada / Trekking')
-    const {register, handleSubmit} = useForm();
+    const [dificuldade, setDificuldade] = useState('');
+    const [tipoTrilha, setTipoTrilha] = useState('')
+    const {register, handleSubmit, formState: {errors}} = useForm();
     const handleEstado = (event) =>{
         setEstado(event.target.outerText)
     }
@@ -27,7 +32,13 @@ function SignUp() {
 
 
     function cadastrarTrilha(formValue) {
-        console.log(formValue)
+        addTrilha({
+            ...formValue,
+            duracao: Number(formValue.duracao),
+            trajeto: Number(formValue.trajeto)
+           });
+
+           navigate("/trilhas")
     }
 
     useEffect(() => {
@@ -47,12 +58,15 @@ function SignUp() {
                         label="Nome da Trilha" 
                         size="small" 
                         variant="outlined"
-                        color="success"
+                        color={errors?.nomeTrilha ? "error" : "success"}
+                        helperText={errors?.nomeTrilha && `${errors.nomeTrilha?.message}`}
+                        
                         {...register("nomeTrilha", {
                             required: "Esse campo é obrigatório",
                             maxLength: {value: 100, message: "Máx. 100 caracteres"}
                         })}
                     />
+
                 </div>
                 <div className="formRow">
                     <TextField 
@@ -62,10 +76,12 @@ function SignUp() {
                         label="Duração estimada (min)" 
                         size="small" 
                         variant="outlined"
-                        color="success"
+                        color={errors?.duracao ? "error" : "success"}
+                        helperText={errors?.duracao && `${errors.duracao?.message}`}
+    
                         {...register("duracao", {
                             required: "Esse campo é obrigatório",
-                            maxLength: {value: 100, message: "Máx. 100 caracteres"}
+                            maxLength: {value: 4, message: "Máx. 4 caracteres"}
                         })}
                     />
                     <TextField 
@@ -75,10 +91,12 @@ function SignUp() {
                         label="Trajeto (km)" 
                         size="small"
                         variant="outlined"
-                        color="success"
+                        color={errors?.trajeto ? "error" : "success"}
+                        helperText={errors?.trajeto && `${errors.trajeto?.message}`}
+
                         {...register("trajeto", {
                             required: "Esse campo é obrigatório",
-                            maxLength: {value: 100, message: "Máx. 100 caracteres"}
+                            maxLength: {value: 5, message: "Máx. 5 caracteres"}
                         })}
                     />
                 </div>
@@ -90,10 +108,12 @@ function SignUp() {
                         label="Cidade" 
                         size="small"
                         variant="outlined"
-                        color="success"
+                        color={errors?.cidade ? "error" : "success"}
+                        helperText={errors?.cidade && `${errors.cidade?.message}`}
+
                         {...register("cidade", {
                             required: "Esse campo é obrigatório",
-                            maxLength: {value: 100, message: "Máx. 100 caracteres"}
+                            maxLength: {value: 50, message: "Máx. 50 caracteres"}
                         })}
                     />
                     <FormControl className="halfWidth inputDefaultConf" size="small">
@@ -106,12 +126,18 @@ function SignUp() {
                             margin="none"
                             variant="outlined"
                             color="success"
+                            MenuProps={{ PaperProps: { sx: { maxHeight: 300 } } }}
                             value={estado}
                             {...register("estado", {
                                 required: "Esse campo é obrigatório"})}
                             >
-                                <MenuItem onClick={handleEstado} value={'SC'}>SC</MenuItem>
-                                <MenuItem onClick={handleEstado} value={'PR'}>PR</MenuItem>
+                                {
+                                    estadosBrasil && estadosBrasil.map((estado, index) => {
+                                        return (
+                                            <MenuItem onClick={handleEstado} key={index} value={estado}>{estado}</MenuItem>
+                                        )
+                                    })
+                                }
                         </Select>
                     </FormControl>
                 </div>
@@ -123,7 +149,9 @@ function SignUp() {
                         label="Nome completo usuário" 
                         size="small"
                         variant="outlined"
-                        color="success"
+                        color={errors?.nomeUsuario ? "error" : "success"}
+                        helperText={errors?.nomeUsuario && `${errors.nomeUsuario?.message}`}
+
                         {...register("nomeUsuario", {
                             required: "Esse campo é obrigatório",
                             maxLength: {value: 100, message: "Máx. 100 caracteres"}
@@ -139,13 +167,18 @@ function SignUp() {
                             margin="none"
                             variant="outlined"
                             color="success"
+
                             value={dificuldade}
                             {...register("dificuldade", {
                                 required: "Esse campo é obrigatório"})}
                             >
-                                <MenuItem onClick={handleDificuldade} value={'Iniciante'}>Iniciante</MenuItem>
-                                <MenuItem onClick={handleDificuldade} value={'Intermediário'}>Intermediário</MenuItem>
-                                <MenuItem onClick={handleDificuldade} value={'Difícil'}>Difícil</MenuItem>
+                                {
+                                    dificuldadeTrilha && dificuldadeTrilha.map((dificuldade, index) => {
+                                        return (
+                                            <MenuItem onClick={handleDificuldade} key={index} value={dificuldade}>{dificuldade}</MenuItem>
+                                        )
+                                    })
+                                }
                         </Select>
                     </FormControl>
                 </div>
@@ -160,12 +193,18 @@ function SignUp() {
                             margin="none"
                             variant="outlined"
                             color="success"
+
                             value={tipoTrilha}
                             {...register("tipo", {
                                 required: "Esse campo é obrigatório"})}
                             >
-                                <MenuItem onClick={handleTipo} value={'Caminhada / Trekking'}>Caminhada / Trekking</MenuItem>
-                                <MenuItem onClick={handleTipo} value={'Ciclismo'}>Ciclismo</MenuItem>
+                                {
+                                    categoriaTrilha && categoriaTrilha.map((tipoTrilha, index) => {
+                                        return (
+                                            <MenuItem onClick={handleTipo} key={index} value={tipoTrilha}>{tipoTrilha}</MenuItem>
+                                        )
+                                    })
+                                }
                         </Select>
                     </FormControl>
                 </div>
@@ -177,7 +216,9 @@ function SignUp() {
                         label="URL imagem da trilha" 
                         size="small"
                         variant="outlined"
-                        color="success"
+                        color={errors?.urlImagem ? "error" : "success"}
+                        helperText={errors?.urlImagem && `${errors.urlImagem?.message}`}
+
                         {...register("urlImagem", {
                             required: "Esse campo é obrigatório"
                         })}

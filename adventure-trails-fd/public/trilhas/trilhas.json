@@ -1,6 +1,7 @@
 {
     "trilhas": [
         {
+            "id": 1,
             "nomeTrilha": "Trilha da Costa da Lagoa",
             "cidade":"Florianópolis",
             "estado":"SC",
@@ -12,6 +13,7 @@
             "urlImagem":"https://trilhasemsc.com.br/public/img/trilhas/descricao/trilha-da-costa-da-lagoa/caminho-nas-rochas.jpg"
         },
         {
+            "id": 2,
             "nomeTrilha": "Trilha da Praia dos Naufragados",
             "cidade":"Florianópolis",
             "estado":"SC",
@@ -23,6 +25,7 @@
             "urlImagem":"https://i2.wp.com/www.casabaunilha.com.br/site/wp-content/uploads/2022/04/trilhaPraiaNaufragadosCasaBaunilha857.jpg?resize=900%2C1359"
         },
         {
+            "id": 3,
             "nomeTrilha": "Trilha da Galheta",
             "cidade":"Florianópolis",
             "estado":"SC",
@@ -34,6 +37,7 @@
             "urlImagem":"https://www.viajali.com.br/wp-content/uploads/2020/11/praia-da-galheta-6.jpg"
         },
         {
+            "id": 4,
             "nomeTrilha": "Trilha Travessão",
             "cidade":"Florianópolis",
             "estado":"SC",
@@ -45,6 +49,7 @@
             "urlImagem":"https://ep1.pinkbike.org/p4pb21591594/p4pb21591594.jpg"
         },
         {
+            "id": 5,
             "nomeTrilha": "Trilhas João Paulo",
             "cidade":"Florianópolis",
             "estado":"SC",

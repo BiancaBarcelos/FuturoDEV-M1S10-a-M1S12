@@ -16,6 +16,8 @@ const StyledRating = styled(Rating)({
 
 
 function CardTrilha({dadosTrilha}) {
+
+  console.log(dadosTrilha)
   return (
     <div className="cardContainer">
       <div className="imagemCard">
@@ -25,10 +27,11 @@ function CardTrilha({dadosTrilha}) {
         <div className="tituloCard">
           <h1>{dadosTrilha.nomeTrilha} - {dadosTrilha.cidade}/ {dadosTrilha.estado}</h1> 
           <StyledRating
-            name="customized-color"
+            id={`coracao-${dadosTrilha.id}`}
+            name={`customized-color-${dadosTrilha.id}`}
             defaultValue={0}
-            icon={<FavoriteIcon fontSize="inherit" />}
-            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+            icon={<FavoriteIcon fontSize="inherit"/>}
+            emptyIcon={<FavoriteBorderIcon fontSize="inherit"/>}
             size="large"
             max={1}
           />
@@ -41,7 +44,10 @@ function CardTrilha({dadosTrilha}) {
         </div>
         <span className="dificuldade">{dadosTrilha.dificuldade}!</span>
         <div className="avaliacaoTrilha">
-          <Rating precision={0.5} size="large"/>
+          <Rating 
+            precision={0.5} 
+            size="large"
+            id={`estrela-${dadosTrilha.id}`}/>
           <a href="">Avaliações</a>
         </div>
       </div>
@@ -50,7 +56,8 @@ function CardTrilha({dadosTrilha}) {
 }
   
 CardTrilha.propTypes = {
-    dadosTrilha: PropTypes.exact({
+  dadosTrilha: PropTypes.exact({
+    id: PropTypes.number.isRequired,
     nomeTrilha: PropTypes.string.isRequired,
     cidade: PropTypes.string.isRequired,
     estado: PropTypes.string.isRequired,

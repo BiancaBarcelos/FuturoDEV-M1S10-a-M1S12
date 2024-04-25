@@ -19,7 +19,7 @@ function Trails() {
         <h1 className='tituloTrails'>Explore Trilhas Incríveis</h1>
         {
             trilhas && trilhas.map((trilha, index) => (
-            <CardTrilha dadosTrilha={trilha} key={index}/>
+            <CardTrilha dadosTrilha={trilha} key={trilha.id} id={index}/>
             ))
             
         }

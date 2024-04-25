@@ -16,6 +16,8 @@ const StyledRating = styled(Rating)({
 
 
 function CardTrilha({dadosTrilha}) {
+
+  console.log(dadosTrilha)
   return (
     <div className="cardContainer">
       <div className="imagemCard">
@@ -25,23 +27,27 @@ function CardTrilha({dadosTrilha}) {
         <div className="tituloCard">
           <h1>{dadosTrilha.nomeTrilha} - {dadosTrilha.cidade}/ {dadosTrilha.estado}</h1> 
           <StyledRating
-            name="customized-color"
+            id={`coracao-${dadosTrilha.id}`}
+            name={`customized-color-${dadosTrilha.id}`}
             defaultValue={0}
-            icon={<FavoriteIcon fontSize="inherit" />}
-            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+            icon={<FavoriteIcon fontSize="inherit"/>}
+            emptyIcon={<FavoriteBorderIcon fontSize="inherit"/>}
             size="large"
             max={1}
           />
         </div>
         <div className="linha"></div>
-        <p className="usuário">Por: {dadosTrilha.nomeUsuario}</p>
+        <p className="usuario">Por: {dadosTrilha.nomeUsuario}</p>
         <div className="detalhes">
           <p>Duração: {dadosTrilha.duracao} min</p>
           <p>Trajeto: {dadosTrilha.trajeto} Km</p>
         </div>
         <span className="dificuldade">{dadosTrilha.dificuldade}!</span>
         <div className="avaliacaoTrilha">
-          <Rating precision={0.5} size="large"/>
+          <Rating 
+            precision={0.5} 
+            size="large"
+            id={`estrela-${dadosTrilha.id}`}/>
           <a href="">Avaliações</a>
         </div>
       </div>
@@ -50,16 +56,17 @@ function CardTrilha({dadosTrilha}) {
 }
   
 CardTrilha.propTypes = {
-    dadosTrilha: PropTypes.exact({
+  dadosTrilha: PropTypes.exact({
+    id: PropTypes.number.isRequired,
     nomeTrilha: PropTypes.string.isRequired,
-    cidade: PropTypes.string,
-    estado: PropTypes.string,
-    duracao: PropTypes.number,
-    trajeto: PropTypes.number,
-    dificuldade: PropTypes.string,
-    tipo: PropTypes.oneOf(['caminhada / trekking' ,'ciclismo']),
-    nomeUsuario: PropTypes.string,
-    urlImagem: PropTypes.string,
+    cidade: PropTypes.string.isRequired,
+    estado: PropTypes.string.isRequired,
+    duracao: PropTypes.number.isRequired,
+    trajeto: PropTypes.number.isRequired,
+    dificuldade: PropTypes.string.isRequired,
+    tipo: PropTypes.oneOf(['Caminhada / Trekking' ,'Ciclismo']).isRequired,
+    nomeUsuario: PropTypes.string.isRequired,
+    urlImagem: PropTypes.string.isRequired,
   })
 }
 

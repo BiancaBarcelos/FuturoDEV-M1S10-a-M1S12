@@ -1,0 +1,31 @@
+.containerCadastro{
+    max-width: 600px;
+    width: 100%;
+    margin:auto;
+    min-height: calc(100vh - 190px);
+    & h1{
+        margin: 50px 0 30px;
+    }
+}
+.formRow{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: flex-start;
+    .inputDefaultConf{
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+}
+.fullWidth{
+    width: 100%;
+    flex: 1;
+}
+.halfWidth{
+    width: 50%;
+}
+
+
+.container{
+    padding: 0 30px;
+}

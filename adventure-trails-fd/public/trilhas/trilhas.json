@@ -1,0 +1,64 @@
+{
+    "trilhas": [
+        {
+            "id": 1,
+            "nomeTrilha": "Trilha da Costa da Lagoa",
+            "cidade":"Florianópolis",
+            "estado":"SC",
+            "duracao": 110,
+            "trajeto": 7.5,
+            "dificuldade":"Intermediário",
+            "tipo":"Caminhada / Trekking",
+            "nomeUsuario":"Bianca Barcelos",
+            "urlImagem":"https://trilhasemsc.com.br/public/img/trilhas/descricao/trilha-da-costa-da-lagoa/caminho-nas-rochas.jpg"
+        },
+        {
+            "id": 2,
+            "nomeTrilha": "Trilha da Praia dos Naufragados",
+            "cidade":"Florianópolis",
+            "estado":"SC",
+            "duracao": 50,
+            "trajeto": 2.2,
+            "dificuldade":"Iniciante",
+            "tipo":"Caminhada / Trekking",
+            "nomeUsuario":"Bianca Barcelos",
+            "urlImagem":"https://i2.wp.com/www.casabaunilha.com.br/site/wp-content/uploads/2022/04/trilhaPraiaNaufragadosCasaBaunilha857.jpg?resize=900%2C1359"
+        },
+        {
+            "id": 3,
+            "nomeTrilha": "Trilha da Galheta",
+            "cidade":"Florianópolis",
+            "estado":"SC",
+            "duracao": 20,
+            "trajeto": 0.5,
+            "dificuldade":"Iniciante",
+            "tipo":"Caminhada / Trekking",
+            "nomeUsuario":"Bianca Barcelos",
+            "urlImagem":"https://www.viajali.com.br/wp-content/uploads/2020/11/praia-da-galheta-6.jpg"
+        },
+        {
+            "id": 4,
+            "nomeTrilha": "Trilha Travessão",
+            "cidade":"Florianópolis",
+            "estado":"SC",
+            "duracao": 110,
+            "trajeto": 5.4,
+            "dificuldade":"Difícil",
+            "tipo":"Ciclismo",
+            "nomeUsuario":"Bianca Barcelos",
+            "urlImagem":"https://ep1.pinkbike.org/p4pb21591594/p4pb21591594.jpg"
+        },
+        {
+            "id": 5,
+            "nomeTrilha": "Trilhas João Paulo",
+            "cidade":"Florianópolis",
+            "estado":"SC",
+            "duracao": 30,
+            "trajeto": 1.7,
+            "dificuldade":"Iniciante",
+            "tipo":"Ciclismo",
+            "nomeUsuario":"Bianca Barcelos",
+            "urlImagem":"https://img.redbull.com/images/q_auto,f_auto/redbullcom/2017/07/25/89c239fb-0ccf-4d7c-8bf0-d805aa49b64d/ciclotrilhas-floripa.jpg"
+        }
+    ]
+}

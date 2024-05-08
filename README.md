@@ -1,8 +1,8 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Adventure Trails
 
-Currently, two official plugins are available:
+Adventure Trails é uma comunidade que ama ficar ao ar livre, aqui é possível cadastrar trilhas de caminhada e ciclismo, e usufruir essa experiência compartilhada por outros aventureiros. Projeto executado no curso FuturoDEV.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+https://github.com/BiancaBarcelos/FuturoDEV-M1S10-a-M1S13/assets/136381822/399e7442-9f42-43d5-ad9a-27681b4e0a5a

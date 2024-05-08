@@ -1,0 +1,30 @@
+.footer {
+    background-color: #13241A;
+    color: #FFFFFF;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    & ul {
+        display: flex;
+        gap: 15px;
+
+        & li {
+            list-style-type: none; 
+        }
+    }
+    & .social {
+        display: flex;
+        align-items: center;
+    }
+    & .social a:not(:last-child) {
+        margin-right: 28px;
+    }
+    & a{
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+    & img {
+        filter: invert(1);
+    }
+}
